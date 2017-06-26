@@ -35,7 +35,7 @@ public class MyMojo
 {
     /**
      * Location of the file.
-     * @parameter expression="${project.build.directory}"
+     * @parameter property="project.build.directory"
      * @required
      */
     private File outputDirectory;

@@ -13,6 +13,7 @@
 
     <build>
         <plugins>
+            <!-- Execute the sample plugin -->
             <plugin>
                 <groupId>org.javaparser</groupId>
                 <artifactId>trace-code-plugin</artifactId>
@@ -20,9 +21,12 @@
                 <executions>
                     <execution>
                         <configuration>
+                            <!-- We want this code to get the trace lines: -->
                             <sourceDirectory>${project.basedir}/src/main/template</sourceDirectory>
+                            <!-- The destinationDirectory has a default that's just fine -->
                         </configuration>
                         <goals>
+                            <!-- The goal finds the name in the @Mojo annotation on TraceCodePluginMojo -->
                             <goal>trace-code</goal>
                         </goals>
                     </execution>

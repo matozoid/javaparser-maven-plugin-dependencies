@@ -17,6 +17,9 @@ import java.io.IOException;
 import static com.github.javaparser.utils.CodeGenerationUtils.f;
 
 /**
+ * This plugin is a sample for building your own plugins. It takes a directory of source code and adds a trace line to
+ * each method.
+ *
  * @goal trace-code
  * @phase process-sources
  */

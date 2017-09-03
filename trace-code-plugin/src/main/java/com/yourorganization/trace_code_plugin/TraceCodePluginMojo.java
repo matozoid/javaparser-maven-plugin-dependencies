@@ -1,4 +1,4 @@
-package org.javaparser.trace_code_plugin;
+package com.yourorganization.trace_code_plugin;
 
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;

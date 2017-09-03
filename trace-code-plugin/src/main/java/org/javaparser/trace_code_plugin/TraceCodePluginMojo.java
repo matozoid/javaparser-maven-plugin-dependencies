@@ -13,6 +13,7 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
+import org.apache.maven.project.MavenProject;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,10 +33,16 @@ public class TraceCodePluginMojo extends AbstractMojo {
     private File sourceDirectory;
 
     /**
-     * Location for the source files with added trace lines.
+     * Location where the modified source files should be saved.
      */
     @Parameter(required = true, defaultValue = "${project.build.directory}/generated-sources/trace-code")
     private File destinationDirectory;
+
+    /**
+     * The current Maven project.
+     */
+    @Parameter(property = "project", required = true, readonly = true)
+    private MavenProject project;
 
     @Override
     public void execute() throws MojoExecutionException {
@@ -59,6 +66,8 @@ public class TraceCodePluginMojo extends AbstractMojo {
             }
             // Everything parsed with sourceroot is kept in a cache so that it can be saved to disk in 1 line:
             source.saveAll(destinationDirectory.toPath());
+            // Tell Maven where we put the generated code so it will be added to the jar.
+            project.addCompileSourceRoot(destinationDirectory.getPath());
         } catch (IOException e) {
             throw new MojoExecutionException("Error reading from source directory", e);
         }

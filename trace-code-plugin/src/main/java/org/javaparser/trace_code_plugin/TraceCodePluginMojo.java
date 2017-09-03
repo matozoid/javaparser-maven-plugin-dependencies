@@ -32,7 +32,7 @@ public class TraceCodePluginMojo extends AbstractMojo {
     /**
      * Location for the source files with added trace lines.
      *
-     * @parameter property="project.build.directory"
+     * @parameter default-value="${project.build.directory}/generated-sources/trace-code"
      * @required
      */
     private File destinationDirectory;

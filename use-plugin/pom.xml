@@ -20,7 +20,7 @@
                 <executions>
                     <execution>
                         <configuration>
-                            <sourceDirectory>${project.build.sourceDirectory}</sourceDirectory>
+                            <sourceDirectory>${project.basedir}/src/main/template</sourceDirectory>
                         </configuration>
                         <goals>
                             <goal>trace-code</goal>

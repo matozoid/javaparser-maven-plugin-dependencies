@@ -1,3 +1,8 @@
-The default maven plugin archetype creates a plugin that doesn't work with Java 8,
-thanks to a really outdated asm dependency.
-Here is the archetype output with better versions that do support Java 8.
+A sample setup for a maven plugin that runs JavaParser.
+---
+
+* `trace-code-plugin` is the actual maven plugin.
+It shows how to set up dependencies and access directories and such.
+The plugin itself simply adds a line to each method that prints its name (for "tracing.")
+* `use-plugin` is a little project that executes the plugin on some source code.
+The results can be found in its target directory.

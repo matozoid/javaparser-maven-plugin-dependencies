@@ -1,7 +1,7 @@
 package com.yourorganization.trace_code_plugin;
 
-import com.github.javaparser.JavaParser;
 import com.github.javaparser.ParseResult;
+import com.github.javaparser.StaticJavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.javaparser.ast.stmt.Statement;
@@ -88,7 +88,7 @@ public class TraceCodePluginMojo extends AbstractMojo {
                 /* Creates a small AST of the code in the string.
                 "f" is a shortcut to String.format.
                  */
-                return JavaParser.parseStatement(f("System.out.println(\"Entering %s\");", methodName));
+                return StaticJavaParser.parseStatement(f("System.out.println(\"Entering %s\");", methodName));
             }
         }, null);
     }

@@ -1,4 +1,4 @@
-package com.yourorganization.trace_code_plugin;
+package com.yourorganization.trace_code_maven_plugin;
 
 import org.apache.maven.plugin.logging.Log;
 

@@ -1,4 +1,4 @@
-package com.yourorganization.trace_code_plugin;
+package com.yourorganization.trace_code_maven_plugin;
 
 import com.github.javaparser.ParseResult;
 import com.github.javaparser.StaticJavaParser;
@@ -25,7 +25,7 @@ import static com.github.javaparser.utils.CodeGenerationUtils.f;
  * each method.
  */
 @Mojo(name = "trace-code", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
-public class TraceCodePluginMojo extends AbstractMojo {
+public class TraceCodeMavenPluginMojo extends AbstractMojo {
     /**
      * Location for the source files with added trace lines.
      */
